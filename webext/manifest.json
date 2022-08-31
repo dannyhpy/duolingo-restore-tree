@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "DuoTree",
+  "version": "0.1.0",
+
+  "description": "Restores the tree in Duolingo",
+  
+  "content_scripts": [
+    {
+      "matches": ["https://*.duolingo.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["pageScript.js"],
+      "matches": ["https://*.duolingo.com/*"]
+    }
+  ],
+
+  "host_permissions": [
+    "https://*.duolingo.com/"
+  ]
+}
